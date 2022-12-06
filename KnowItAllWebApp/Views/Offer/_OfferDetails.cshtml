@@ -1,0 +1,34 @@
+﻿@model OfferMaterialsViewModel
+<h4 class="pt-4 d-flex justify-content-between align-items-center mb-3">
+    <span class="text-primary">Offer:</span>
+</h4>
+@if (Model.OfferMaterials != null)
+{
+    <input id="offerId" type="hidden" asp-for="@Model.Offer.Id" class="form-control" />
+    <ul class="list-group mb-3">
+        @foreach (var item in Model.OfferMaterials)
+        {
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+                <h6 class="my-0">@item.Material.Name</h6>
+                <span class="text-muted">
+                    @item.Quantity x $@item.Material.Price
+                </span>
+            </li>
+        }
+    </ul>
+    <hr />
+    <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+            <h6 class="my-0">Time</h6>
+            <span class="text-muted">
+                @Model.Offer.Time
+            </span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+            <h6 class="my-0">Price</h6>
+            <span class="text-muted">
+                @Model.Offer.Price $
+            </span>
+        </li>
+    </ul>
+}

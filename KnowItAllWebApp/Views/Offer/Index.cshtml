@@ -1,0 +1,16 @@
+﻿@model OfferMaterialsViewModel
+@{
+    ViewData["Title"] = "Add Offer Page";
+}
+
+<div class="row border rounded-3 p-2" id="AddOffer">
+    <div class="col-md-8 bg-light border rounded-3 pt-2" id="Materials">
+        <partial name="_OfferMaterial" model="@Model" />        
+    </div>
+    <div class="col-md-4 bg-light border rounded-3 pt-2" id="Results">
+        <partial name="_Offer" model="@Model" />
+    </div>
+</div>
+
+
+
